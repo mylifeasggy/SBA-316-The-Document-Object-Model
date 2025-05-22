@@ -9,7 +9,7 @@ Application description: App that allows users to create their own stitch patter
 The user only needs to choose the color they prefer and click the tiles. 
 They can clear the whole canvas by clicking the button clear or can click th tile of preference to delete just that one. 
 
-
+![Cross Stitch Application](<Cross Stitch App.png>)
 
                             Requirements
 Cache at least one element using selectElementById.
