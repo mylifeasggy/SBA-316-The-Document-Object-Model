@@ -1,7 +1,7 @@
 const header = document.createElement('header')
 header.innerHTML = '<h1>CROSS STITCH APP </h1>'
 
-const title = document.querySelector('title').childNodes[0].nodeValue;
+const title = document.querySelector('title').childNodes[0]; //Use parent-child-sibling relationships
 title.textContent = 'Cross Stitch App'
 
 document.querySelector('body').appendChild(header)
@@ -36,7 +36,7 @@ canvas.appendChild(buttons) //Use appendChild and/or prepend to add new elements
 
 
 
-// Requirement 3: Use parent-child-sibling relationships
+// Requirement 3: 
 
 //Requirement 4: Iterate over a collection of elements to accomplish a task
 const grid = document.getElementById('grid')
