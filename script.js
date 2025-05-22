@@ -44,8 +44,6 @@ canvas.appendChild(buttons) //Use appendChild and/or prepend to add new elements
 //Requirement 4: Iterate over a collection of elements to accomplish a task
 const fragment = new DocumentFragment();
 
-
-
 for (let r = 0; r < 15; r++) {
   const tr = document.createElement("tr");
   for (let c = 0; c < 15; c++) {
@@ -66,7 +64,7 @@ canvas.appendChild(gridContainer)
 
 
 //Register at least two different event listeners and create the associated event handler functions.
-let currentColor;
+let currentColor=colorInput.value;
 colorInput.addEventListener("input", () => {
   currentColor = colorInput.value;
 
@@ -80,8 +78,9 @@ grid.addEventListener('click', (event) => {
   tile.style.color = currentColor;
   if (tile.tagName !== "TD") {
     return
-  }  
-   if ( tile.textContent=== 'X') {
+  }
+  if (tile.textContent === 'X') {
+    
 
     tile.textContent = "";
   } else {
@@ -96,9 +95,11 @@ grid.addEventListener('click', (event) => {
 
 })
 
-
 clear.addEventListener("click", () => {
+    
   td.forEach(td => td.textContent = '');
+  currentColor = colorInput.value;
+
 
 });
 
