@@ -46,7 +46,7 @@ canvas.appendChild(buttons) //Use appendChild and/or prepend to add new elements
 // Requirement 3: 
 
 //Requirement 4: Iterate over a collection of elements to accomplish a task
-const fragment = document.createDocumentFragment();
+const fragment = new DocumentFragment();
 
 
 
@@ -80,7 +80,7 @@ grid.addEventListener('click', (event) => {
   event.preventDefault();
   const tile = event.target;
   tile.style.color = currentColor;
-  tile.classList.toggle('marked');
+ 
   
   // tile.textContent = 'X'
   if (tile.tagName !== "TD") {
@@ -100,17 +100,11 @@ clear.addEventListener("click", () => {
 
 
 //Use at least two Browser Object Model (BOM) properties or methods.
-const phost = document.createElement('p')
-const hostname =  window.location.hostname
-phost.innerText = `Page hostname is ${hostname}`
-console.log(phost)
 
+console.log(`Page hostname is ${window.location.hostname}`)
 
-const nav= document.createElement('p')
-const userA = window.navigator.userAgent;
-userA.innerText= `User- agent header: ${userA}`
+console.log(`The width of the page is: ${innerWidth} and the height is:${innerHeight}`)
 
-console.log(userA)
 
 //Include at least one form and/or input with HTML attribute validation.
 //Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.)
@@ -123,8 +117,5 @@ form.addEventListener("submit",(event)=>{
      if (password.value === ''|| username.value === ''){
     alert(`All fields are required!`);
      }
-     event.target.reset()
-})
-
-
-
+     event.target.reset();
+});
