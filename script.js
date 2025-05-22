@@ -14,17 +14,17 @@ header.style.fontFamily ='Montserrat, sans-serif';
 
 
 const canvas = document.getElementById('canvas') //Cache at least one element using selectElementById.
-const canvasinputs = document.querySelector('canvas-inputs');//Requirement 2: Cache elements using querySelector
-const gridContainer = document.getElementById('gridContainer');
+const gridContainer = document.querySelector('#gridContainer');//Requirement 2: Cache elements using querySelector
 const colorInput = document.getElementById("color-input");
 
 const buttons = document.createElement('div');
+
 buttons.classList.add('buttons'); //Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
 buttons.style.marginTop = '16px';
 buttons.style.display ='flex';
 buttons.style.justifyContent ='center';  
 
-const clear= document.createElement('button') //Create at least one element using createElement.
+const clear = document.createElement('button') //Create at least one element using createElement.
 clear.setAttribute('id','clear') //Modify at least one attribute of an element in response to user interaction.
 clear.textContent = "Clear" //Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
 
@@ -60,6 +60,8 @@ for (let r = 0; r < 15; r++) {
 grid.appendChild(fragment)
 gridContainer.appendChild(grid);
 canvas.appendChild(gridContainer)
+
+
 
 //Register at least two different event listeners and create the associated event handler functions.
 let currentColor;
