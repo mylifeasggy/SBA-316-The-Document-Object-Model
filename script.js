@@ -1,3 +1,18 @@
+const header = document.createElement('header')
+header.innerHTML = '<h1>CROSS STITCH APP </h1>'
+
+const title = document.querySelector('title').childNodes[0].nodeValue;
+title.textContent = 'Cross Stitch App'
+
+document.querySelector('body').appendChild(header)
+
+header.style.textAlign = 'center'
+header.style.marginTop= '50px';
+header.style.color = '#ffff';
+header.style.fontFamily ='Montserrat, sans-serif';
+
+
+
 const canvas = document.getElementById('canvas') //Cache at least one element using selectElementById.
 const canvasinputs = document.querySelector('canvas-inputs');//Requirement 2: Cache elements using querySelector
 const gridContainer = document.getElementById('gridContainer');

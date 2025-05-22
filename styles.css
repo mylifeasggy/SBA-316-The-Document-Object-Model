@@ -58,3 +58,17 @@ a {
   overflow: none;
   font-family: "Montserrat", sans-serif;
 }
+
+#gridContainer{
+  margin: 32px auto;
+  width: 100%;
+  place-items: center;
+
+}
+
+td {
+  width:10px;
+  height: 10px;
+  font-size: 8px;
+  font-weight: bolder;
+}
