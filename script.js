@@ -1,20 +1,27 @@
 const header = document.createElement('header')
 header.innerHTML = '<h1>CROSS STITCH APP </h1>'
 
+console.log (header.firstChild)
+
 const title = document.querySelector('title').childNodes[0]; //Use parent-child-sibling relationships
 title.textContent = 'Cross Stitch App'
 
 document.querySelector('body').appendChild(header)
 
-header.style.textAlign = 'center'
-header.style.marginTop= '50px';
-header.style.color = '#ffff';
-header.style.fontFamily ='Montserrat, sans-serif';
+const h1 = header.firstChild
+
+h1.style.textAlign = 'center'
+h1.style.marginTop= '50px';
+h1.style.color = '#ffff';
+h1.style.fontFamily ='Montserrat, sans-serif';
 
 
 
 const canvas = document.getElementById('canvas') //Cache at least one element using selectElementById.
-const gridContainer = document.querySelector('#gridContainer');//Requirement 2: Cache elements using querySelector
+const grid = document.getElementById('grid')
+const gridContainer = grid.parentNode;//Requirement 2: Cache elements using querySelector
+
+console.log(grid.parentNode)
 const colorInput = document.getElementById("color-input");
 
 const buttons = document.createElement('div');
@@ -40,7 +47,7 @@ canvas.appendChild(buttons) //Use appendChild and/or prepend to add new elements
 
 //Requirement 4: Iterate over a collection of elements to accomplish a task
 const fragment = document.createDocumentFragment();
-const grid = document.getElementById('grid')
+
 
 
 for (let r = 0; r < 15; r++) {
