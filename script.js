@@ -91,5 +91,18 @@ clear.addEventListener("click", () => {
 
 
 //Use at least two Browser Object Model (BOM) properties or methods.
+
+
+
 //Include at least one form and/or input with HTML attribute validation.
 //Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.)
+const form = document.querySelector('#login')
+const username = form["username"]
+const password = document.getElementById('password')
+
+form.addEventListener("submit",(event)=>{
+    event.preventDefault()
+     if (password.value === ''|| username.value === ''){
+    alert(`All fields are required!`);
+ 
+})
