@@ -94,14 +94,14 @@ clear.addEventListener("click", () => {
 const phost = document.createElement('p')
 const hostname =  window.location.hostname
 phost.innerText = `Page hostname is ${hostname}`
-
-
-const pUrl = document.createElement('p')
-const currentUrl = window.location.href;
-pUrl.innerText= `Current URL: ${currentUrl}`
-
 console.log(phost)
-console.log(pUrl)
+
+
+const nav= document.createElement('p')
+const userA = window.navigator.userAgent;
+userA.innerText= `User- agent header: ${userA}`
+
+console.log(userA)
 
 //Include at least one form and/or input with HTML attribute validation.
 //Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.)

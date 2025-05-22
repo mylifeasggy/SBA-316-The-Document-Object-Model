@@ -1,13 +1,15 @@
 # SBA-316-The-Document-Object-Model
 
 
-                            Instructions
+                            Instructions. 
 You will create a small single-page web application. The topic and content of this application is entirely up to you; be creative!
 
 <h1> Cross Stich App </h1>
 Application description: App that allows users to create their own stitch patters. 
 The user only needs to choose the color they prefer and click the tiles. 
 They can clear the whole canvas by clicking the button clear or can click th tile of preference to delete just that one. 
+<br>
+
 
 ![Cross Stitch Application](<Cross Stitch App.png>)
 
