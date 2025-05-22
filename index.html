@@ -11,17 +11,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-
-    <div id="canvas">
-      <div class="canvas-inputs">
-        <label for="color-input">Color:</label>
-        <input type="color" id="color-input" value="#000000" />
-      </div>
-      <div id="gridContainer">
-        <div id="grid"> </div>
-      </div>
+  <form id="login">
+    <input name="username" type="text" placeholder="Username" pattern="^[a-zA-Z]+" />
+    <br />
+    <input name="password" id=password type="password" placeholder="Password" />
+    <input type="submit" value="Login" />
+  </form>
+  <div id="canvas">
+    <div class="canvas-inputs">
+      <label for="color-input">Color:</label>
+      <input type="color" id="color-input" value="#000000" />
     </div>
+    <div id="gridContainer">
+      <div id="grid"> </div>
+    </div>
+  </div>
 
 </body>
 </html>

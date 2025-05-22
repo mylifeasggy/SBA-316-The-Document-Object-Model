@@ -19,7 +19,7 @@ const gridContainer = document.getElementById('gridContainer');
 const colorInput = document.getElementById("color-input");
 
 const buttons = document.createElement('div');
-buttons.classList.add('buttons');
+buttons.classList.add('buttons'); //Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
 buttons.style.marginTop = '16px';
 buttons.style.display ='flex';
 buttons.style.justifyContent ='center';  
@@ -39,8 +39,9 @@ canvas.appendChild(buttons) //Use appendChild and/or prepend to add new elements
 // Requirement 3: 
 
 //Requirement 4: Iterate over a collection of elements to accomplish a task
+const fragment = document.createDocumentFragment();
 const grid = document.getElementById('grid')
-const fragment = document.createDocumentFragment();      
+
 
 for (let r = 0; r < 15; r++) {
   const tr = document.createElement("tr");
@@ -49,7 +50,7 @@ for (let r = 0; r < 15; r++) {
 
     td.style.border = '0.5px solid #edede9';
     td.style.padding = '8px'
-  
+
     tr.appendChild(td);
   }
   fragment.appendChild(tr) //Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content. 
@@ -60,9 +61,35 @@ grid.appendChild(fragment)
 gridContainer.appendChild(grid);
 canvas.appendChild(gridContainer)
 
-//Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content. 
-//Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
 //Register at least two different event listeners and create the associated event handler functions.
+let currentColor;
+colorInput.addEventListener("input", () => {
+  currentColor = colorInput.value;
+});
+
+grid.addEventListener('click', (event) => {
+  event.preventDefault();
+  const tile = event.target;
+  tile.style.color = currentColor;
+  tile.classList.toggle('marked');
+  
+  // tile.textContent = 'X'
+  if (tile.tagName !== "TD") {
+    return
+  }
+  if (tile.innerText == "X") {
+    tile.innerText = "";
+  } else {
+    tile.innerText = "X";
+  }
+})
+
+
+clear.addEventListener("click", () => {
+  document.querySelectorAll('td').forEach(td => td.textContent = '');
+});
+
+
 //Use at least two Browser Object Model (BOM) properties or methods.
 //Include at least one form and/or input with HTML attribute validation.
 //Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.)
