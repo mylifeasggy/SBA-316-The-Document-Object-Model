@@ -1,5 +1,5 @@
 const canvas = document.getElementById('canvas') //Cache at least one element using selectElementById.
-//Requirement 2: Cache elements using querySelector
+const canvasinputs = document.querySelector('canvas-inputs');//Requirement 2: Cache elements using querySelector
 // Requirement 3: Use parent-child-sibling relationships
 //Requirement 4: Iterate over a collection of elements to accomplish a task
 //Create at least one element using createElement.
