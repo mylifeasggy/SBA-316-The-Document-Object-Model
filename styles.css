@@ -49,6 +49,7 @@ a {
   color: #020125;
   overflow: none;
   font-family: "Montserrat", sans-serif;
+  cursor: pointer;
 }
 
 #gridContainer{

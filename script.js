@@ -1,7 +1,7 @@
 const header = document.createElement('header')
 header.innerHTML = '<h1>CROSS STITCH APP </h1>'
 
-console.log (header.firstChild)
+console.log(header.firstChild)
 
 const title = document.querySelector('title').childNodes[0]; //Use parent-child-sibling relationships
 title.textContent = 'Cross Stitch App'
@@ -11,9 +11,9 @@ document.querySelector('body').appendChild(header)
 const h1 = header.firstChild
 
 h1.style.textAlign = 'center'
-h1.style.marginTop= '50px';
+h1.style.marginTop = '50px';
 h1.style.color = '#ffff';
-h1.style.fontFamily ='Montserrat, sans-serif';
+h1.style.fontFamily = 'Montserrat, sans-serif';
 
 
 
@@ -28,17 +28,17 @@ const buttons = document.createElement('div');
 
 buttons.classList.add('buttons'); //Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
 buttons.style.marginTop = '16px';
-buttons.style.display ='flex';
-buttons.style.justifyContent ='center';  
+buttons.style.display = 'flex';
+buttons.style.justifyContent = 'center';
 
 const clear = document.createElement('button') //Create at least one element using createElement.
-clear.setAttribute('id','clear') //Modify at least one attribute of an element in response to user interaction.
+clear.setAttribute('id', 'clear') //Modify at least one attribute of an element in response to user interaction.
 clear.textContent = "Clear" //Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
 
 buttons.appendChild(clear)
 
 canvas.appendChild(buttons) //Use appendChild and/or prepend to add new elements to the DOM.
-  
+
 
 
 
@@ -74,28 +74,41 @@ canvas.appendChild(gridContainer)
 let currentColor;
 colorInput.addEventListener("input", () => {
   currentColor = colorInput.value;
+
 });
+
+const td = grid.querySelectorAll('td')
 
 grid.addEventListener('click', (event) => {
   event.preventDefault();
   const tile = event.target;
   tile.style.color = currentColor;
- 
-  
-  // tile.textContent = 'X'
   if (tile.tagName !== "TD") {
     return
-  }
-  if (tile.innerText == "X") {
-    tile.innerText = "";
+  }  
+   if ( tile.textContent=== 'X') {
+
+    tile.textContent = "";
   } else {
-    tile.innerText = "X";
+    tile.textContent = "X";
   }
+  td.forEach((x) => {
+    if (x !== tile) {
+      x.classList.remove('clicked')
+      tile.classList.add('clicked')
+    }
+  })
+  // tile.textContent = 'X'
+  // if (tile.tagName !== "TD") {
+  //   return
+  // }
+  
 })
 
 
 clear.addEventListener("click", () => {
-  document.querySelectorAll('td').forEach(td => td.textContent = '');
+  td.forEach(td => td.textContent = '');
+
 });
 
 
@@ -112,10 +125,10 @@ const form = document.querySelector('#login')
 const username = form["username"]
 const password = document.getElementById('password')
 
-form.addEventListener("submit",(event)=>{
-    event.preventDefault()
-     if (password.value === ''|| username.value === ''){
+form.addEventListener("submit", (event) => {
+  event.preventDefault()
+  if (password.value === '' || username.value === '') {
     alert(`All fields are required!`);
-     }
-     event.target.reset();
+  }
+  event.target.reset();
 });
