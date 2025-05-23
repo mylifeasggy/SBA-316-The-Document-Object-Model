@@ -23,7 +23,6 @@ const gridContainer = grid.parentNode;//Requirement 2: Cache elements using quer
 
 console.log(grid.parentNode)
 const colorInput = document.getElementById("color-input");
-
 const buttons = document.createElement('div');
 
 buttons.classList.add('buttons'); //Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
@@ -42,7 +41,7 @@ canvas.appendChild(buttons) //Use appendChild and/or prepend to add new elements
 
 
 //Requirement 4: Iterate over a collection of elements to accomplish a task
-const fragment = new DocumentFragment();
+const fragment = document.createDocumentFragment();
 
 for (let r = 0; r < 15; r++) {
   const tr = document.createElement("tr");
@@ -64,7 +63,7 @@ canvas.appendChild(gridContainer)
 
 
 //Register at least two different event listeners and create the associated event handler functions.
-let currentColor=colorInput.value;
+let currentColor = colorInput.value;
 colorInput.addEventListener("input", () => {
   currentColor = colorInput.value;
 
@@ -80,8 +79,6 @@ grid.addEventListener('click', (event) => {
     return
   }
   if (tile.textContent === 'X') {
-    
-
     tile.textContent = "";
   } else {
     tile.textContent = "X";
@@ -98,9 +95,6 @@ grid.addEventListener('click', (event) => {
 clear.addEventListener("click", () => {
     
   td.forEach(td => td.textContent = '');
-  currentColor = colorInput.value;
-
-
 });
 
 
