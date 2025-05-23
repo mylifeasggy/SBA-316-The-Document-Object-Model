@@ -43,13 +43,13 @@ canvas.appendChild(buttons) //Use appendChild and/or prepend to add new elements
 //Requirement 4: Iterate over a collection of elements to accomplish a task
 const fragment = document.createDocumentFragment();
 
-for (let r = 0; r < 15; r++) {
+for (let r = 0; r < 20; r++) {
   const tr = document.createElement("tr");
-  for (let c = 0; c < 15; c++) {
+  for (let c = 0; c < 20; c++) {
     const td = document.createElement("td");
 
     td.style.border = '0.5px solid #edede9';
-    td.style.padding = '8px';
+    
     tr.appendChild(td);
   }
   fragment.appendChild(tr) //Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content. 
@@ -78,10 +78,10 @@ grid.addEventListener('click', (event) => {
   if (tile.tagName !== "TD") {
     return
   }
-  if (tile.textContent === 'X') {
+  if (tile.textContent === 'x') {
     tile.textContent = "";
   } else {
-    tile.textContent = "X";
+    tile.textContent = "x";
   }
   td.forEach((x) => {
     if (x !== tile) {
@@ -93,7 +93,7 @@ grid.addEventListener('click', (event) => {
 })
 
 clear.addEventListener("click", () => {
-    
+
   td.forEach(td => td.textContent = '');
 });
 
